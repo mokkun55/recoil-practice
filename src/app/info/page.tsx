@@ -2,16 +2,16 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { useRecoilState } from "recoil";
-import { countAtom, textAtom } from "./state/globalState";
+import { atom, useRecoilState } from "recoil";
+import { countAtom, textAtom } from "../state/globalState";
 
 const Page = () => {
   const [count, setCount] = useRecoilState(countAtom);
   const [text, setText] = useRecoilState(textAtom);
 
   return (
-    <div className="bg-blue-200">
-      <h1>ルートページ</h1>
+    <div className="bg-red-200">
+      <h1>infoページ</h1>
       <br />
       <p>カウント: {count}</p>
       <button
@@ -36,7 +36,7 @@ const Page = () => {
         className="border border-gray-300 rounded p-1 mt-2"
       />
       <div>
-        <Link href="/info">infoへ</Link>
+        <Link href="/">rootへ</Link>
       </div>
     </div>
   );
